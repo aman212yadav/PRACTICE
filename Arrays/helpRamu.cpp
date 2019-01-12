@@ -4,28 +4,28 @@
 using namespace std;
 int main()
 {
-
-    long long n,q,x,y,f,t,i,j;
-    cin>>n;
-    vector< pair<long long,long long > > v(n);
-    for(i=0;i<n;i++)
+    int t,n,m,c1,c2,c3,c4,i;
+    cin>>t;
+    while(t--)
     {
-        cin>>x>>y;
-        v[i]=make_pair(x,y);
-    }
-    cin>>q;
-    while(q--)
-    {
-        cin>>f>>t;
-        long long ma=0;
-        for(i=f-1;i<t;i++)
+         cin>>c1>>c2>>c3>>c4;
+        cin>>n>>m;
+        int ric[n];
+        int cab[m];
+        for(i=0;i<n;i++)cin>>ric[i];
+        for(i=0;i<m;i++)cin>>cab[i];
+        int to1=0,to2=0;
+        for(i=0;i<n;i++)
         {
-            for(j=i+1;j<t;j++)
-            {
-                ma=max(ma,(v[i].first-v[j].first)*(v[i].first-v[j].first)+(v[i].second-v[j].second)*(v[i].second-v[j].second));
-            }
+            to1+=min(c2,ric[i]*c1);
         }
-        cout<<ma<<"\n";
+        to1=min(to1,c3);
+        for(i=0;i<m;i++)
+        {
+            to2+=min(c2,cab[i]*c1);
+        }
+        to2=min(to2,c3);
+        cout<<min(to1+to2,c4)<<"\n";
+        
     }
-
 }
