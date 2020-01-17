@@ -1,4 +1,4 @@
-// problem link https://hack.codingblocks.com/practice/p/369/62
+//  problem link https://hack.codingblocks.com/practice/p/369/62
 
 #include<bits/stdc++.h>
 using namespace std;
